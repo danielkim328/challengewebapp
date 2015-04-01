@@ -35,7 +35,7 @@ angular.module( 'appMain.mapFactory', [])
 				infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
 				infoWindow.open(this.map, marker);
 			});
-			this.markers.push(marker);
+			return marker;
 		},
 
 		openInfoWindow: function(e, selectedMarker){
@@ -56,7 +56,6 @@ angular.module( 'appMain.mapFactory', [])
 				this.markers[i].setMap(null);
 			}
 			this.markers = [];
-
 		}
 	};
 

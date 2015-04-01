@@ -13,8 +13,7 @@
  * specified, as shown below.
  */
 angular.module( 'appMain.home', [
-  'ui.router',
-  'plusOne'
+  'ui.router'
 ])
 
 /**
