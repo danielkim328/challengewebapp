@@ -1,32 +1,17 @@
-<!-- <google-map>
-	<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
-	<marker ng-repeat="marker in markers" >
-		<ui-gmap-markercoords="marker.coords" idkey="marker.id"></ui-gmap-marker>
-	</marker>
-</google-map>
- -->
-<!-- 
-<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
-    <ui-gmap-markers models="markers" coords="'self'" icon="'icon'" onClick="onClick()">
-     	<ui-gmap-windows show="show">
-            <div ng-non-bindable>{{title}}</div>
-        </ui-gmap-windows>
-    </ui-gmap-markers>
-</ui-gmap-google-map> -->
+<div id="map">
+    <div id="form">
+        <select id="type" class="form-control float-left select-big"  ng-model="type" ng-init="type" ng-change="update()">
+            <option value="Top Net Income">Top Net Income</option>
+            <option value="Top Earners">Top Earners</option>
+            <option value="Top Spenders">Top Spenders</option>
+        </select>
 
-<div id="form">
-    <select id="type" class="form-control float-left select-big"  ng-model="type" ng-init="type" ng-change="update()">
-        <option value="Top Net Income">Top Net Income</option>
-        <option value="Top Earners">Top Earners</option>
-        <option value="Top Spenders">Top Spenders</option>
-    </select>
+    	<select id="repeatField" class="form-control float-left select-big" ng-model="limit" ng-init="limit" ng-change="update()">
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+        </select>
 
-	<select id="repeatField" class="form-control float-left select-big" ng-model="limit" ng-init="limit" ng-change="update()">
-        <option value="1">1</option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-    </select>
-
+    </div>
+    <div id="map-canvas"></div>
 </div>
-
-<div id="map-canvas"></div>
